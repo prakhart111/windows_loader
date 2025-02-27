@@ -1,15 +1,15 @@
 body {
-  background: #1a0000;
-  color: #ff3333;
+  background: #f0f4f8;
+  color: #8a4fff;
 }
 .start{
   position:relative;
   top:56px;
   width:max-content; 
   right:50px;
-  color:#ff3333;
-  font-family:sans-serif;
-  font-weight:100;
+  color:#8a4fff;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight:300;
   font-size:large;
 }
 .loader {
@@ -37,8 +37,8 @@ body {
   width: 6px;
   height: 6px;
   border-radius: 5px;
-  background: #ff0000;
-  box-shadow: 0 0 9px rgba(255, 0, 0, .3);
+  background: #b084ff;
+  box-shadow: 0 0 9px rgba(176, 132, 255, .3);
 }
 .loader .circle:nth-child(2) {
   animation-delay: 240ms;
@@ -65,7 +65,7 @@ body {
   margin-left: -16px;
   margin-top: -16px;
   border-radius: 13px;
-  background-color: #330000;
+  background-color: #e6e6fa;
 }
 @keyframes orbit {
   0% {
