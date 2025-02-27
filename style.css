@@ -1,13 +1,13 @@
 body {
-  background: #121212;
-  color: #ffffff;
+  background: #1a0000;
+  color: #ff3333;
 }
 .start{
   position:relative;
   top:56px;
   width:max-content; 
   right:50px;
-  color:#ffffff;
+  color:#ff3333;
   font-family:sans-serif;
   font-weight:100;
   font-size:large;
@@ -37,8 +37,8 @@ body {
   width: 6px;
   height: 6px;
   border-radius: 5px;
-  background: #ffffff;
-  box-shadow: 0 0 9px rgba(255, 255, 255, .3);
+  background: #ff0000;
+  box-shadow: 0 0 9px rgba(255, 0, 0, .3);
 }
 .loader .circle:nth-child(2) {
   animation-delay: 240ms;
@@ -65,7 +65,7 @@ body {
   margin-left: -16px;
   margin-top: -16px;
   border-radius: 13px;
-  background-color: #1e1e1e;
+  background-color: #330000;
 }
 @keyframes orbit {
   0% {
