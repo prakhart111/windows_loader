@@ -1,22 +1,17 @@
 body {
-  background: rgb(11, 118, 195);
-/*   animation: bgg 16087ms ease-in alternate infinite; */
+  background: #121212;
+  color: #ffffff;
 }
 .start{
   position:relative;
   top:56px;
   width:max-content; 
   right:50px;
-  color:white;
+  color:#ffffff;
   font-family:sans-serif;
   font-weight:100;
   font-size:large;
 }
-/* @keyframes bgg {
-  0% { background: rgba(0, 153, 255, 1); }
-  50% { background: rgba(41, 255, 121, 1); }
-  100% { background: rgba(255, 74, 88, 1); }
-} */
 .loader {
   position: absolute;
   top: 50%;
@@ -42,7 +37,7 @@ body {
   width: 6px;
   height: 6px;
   border-radius: 5px;
-  background: #fff;
+  background: #ffffff;
   box-shadow: 0 0 9px rgba(255, 255, 255, .3);
 }
 .loader .circle:nth-child(2) {
@@ -70,8 +65,7 @@ body {
   margin-left: -16px;
   margin-top: -16px;
   border-radius: 13px;
-  background-color: inherit;
-  animation: bgg 16087ms ease-in alternate infinite;
+  background-color: #1e1e1e;
 }
 @keyframes orbit {
   0% {
