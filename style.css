@@ -1,7 +1,13 @@
 body {
-  background: rgb(11, 118, 195);
-/*   animation: bgg 16087ms ease-in alternate infinite; */
+  margin: 0;
+  overflow: hidden; /* Prevent scrollbars */
+  background: rgb(11, 118, 195); /* Default background for loader */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
+
 .start{
   position:relative;
   top:56px;
@@ -12,11 +18,7 @@ body {
   font-weight:100;
   font-size:large;
 }
-/* @keyframes bgg {
-  0% { background: rgba(0, 153, 255, 1); }
-  50% { background: rgba(41, 255, 121, 1); }
-  100% { background: rgba(255, 74, 88, 1); }
-} */
+
 .loader {
   position: absolute;
   top: 50%;
@@ -25,7 +27,18 @@ body {
   width: 50px;
   height: 50px; 
   margin: auto;
+  opacity: 1;
+  transition: opacity 1s ease-out; /* For fade-out effect */
 }
+
+.loader.fade-out {
+    opacity: 0;
+}
+
+.loader.hidden {
+    display: none;
+}
+
 .loader .circle {
   position: absolute;
   width: 38px;
@@ -108,4 +121,213 @@ body {
     transform: rotate(945deg);
     opacity: 0;
   }
+}
+
+/* Desktop Styles */
+.desktop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #0078D4; /* Windows 10 blue */
+    background-image: url('https://source.unsplash.com/random/1920x1080/?windows-10-wallpaper'); /* Dynamic wallpaper */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column; /* To stack icons and taskbar */
+    justify-content: space-between; /* Push taskbar to bottom */
+    opacity: 1;
+    transition: opacity 1s ease-in; /* For fade-in effect */
+}
+
+.desktop.hidden {
+    display: none;
+    opacity: 0;
+}
+
+/* Desktop Icons */
+.desktop-icons-container {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align icons to the left */
+    gap: 15px; /* Space between icons */
+    flex-grow: 1; /* Allow container to take available space */
+}
+
+.desktop-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80px; /* Fixed width for icon area */
+    text-align: center;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    user-select: none; /* Prevent text selection */
+}
+
+.desktop-icon:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.desktop-icon img {
+    width: 32px; /* Standard icon size */
+    height: 32px;
+    margin-bottom: 5px;
+}
+
+/* Taskbar Styles */
+.taskbar {
+    width: 100%;
+    height: 48px; /* Standard taskbar height */
+    background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+    box-sizing: border-box;
+}
+
+.start-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px; /* Slightly smaller than taskbar height */
+    width: 40px;
+    border-radius: 2px;
+    transition: background-color 0.2s ease;
+}
+
+.start-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.start-button img {
+    width: 24px; /* Standard Windows logo size */
+    height: 24px;
+}
+
+.taskbar-apps {
+    display: flex;
+    gap: 5px;
+    flex-grow: 1; /* Take up available space */
+}
+
+.taskbar-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 2px;
+    transition: background-color 0.2s ease;
+}
+
+.taskbar-icon:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.taskbar-icon img {
+    width: 24px;
+    height: 24px;
+}
+
+.system-tray {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    font-size: 0.9em;
+    gap: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .desktop-icons-container {
+        padding: 5px;
+        align-items: center; /* Center icons on smaller screens */
+        flex-direction: row; /* Arrange icons in a row */
+        flex-wrap: wrap; /* Allow icons to wrap */
+        justify-content: center;
+    }
+
+    .desktop-icon {
+        width: 60px;
+        font-size: 0.7em;
+    }
+
+    .desktop-icon img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .taskbar {
+        height: 40px;
+        padding: 0 2px;
+    }
+
+    .start-button, .taskbar-icon {
+        height: 36px;
+        width: 36px;
+    }
+
+    .start-button img, .taskbar-icon img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .system-tray {
+        font-size: 0.8em;
+        padding: 0 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .desktop-icons-container {
+        gap: 10px;
+    }
+
+    .desktop-icon {
+        width: 50px;
+        font-size: 0.65em;
+    }
+
+    .desktop-icon img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .taskbar {
+        height: 36px;
+    }
+
+    .start-button, .taskbar-icon {
+        height: 32px;
+        width: 32px;
+    }
+
+    .start-button img, .taskbar-icon img {
+        width: 18px;
+        height: 18px;
+    }
+
+    .system-tray {
+        font-size: 0.75em;
+        padding: 0 3px;
+        gap: 5px;
+    }
 }

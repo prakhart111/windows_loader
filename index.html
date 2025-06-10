@@ -1,13 +1,14 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loader</title>
+    <title>Windows Loader</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class='loader'>
+    <div id='loader' class='loader'>
         <div class="bg"></div>
         <div class='circle'></div>
         <div class='circle'></div>
@@ -17,6 +18,42 @@
         <div class='circle'></div>
         <div class='circle'></div>
         <div class="start">Starting Windows... </div>
-      </div>
+    </div>
+
+    <div id="desktop" class="desktop hidden">
+        <div class="desktop-icons-container">
+            <div class="desktop-icon" id="restartDesktopIcon">
+                <img src="https://img.icons8.com/color/48/000000/restart.png" alt="Restart">
+                <span>Restart</span>
+            </div>
+            <div class="desktop-icon">
+                <img src="https://img.icons8.com/fluent/48/desktop.png" alt="This PC">
+                <span>This PC</span>
+            </div>
+            <div class="desktop-icon">
+                <img src="https://img.icons8.com/color/48/000000/recycle-bin.png" alt="Recycle Bin">
+                <span>Recycle Bin</span>
+            </div>
+        </div>
+
+        <div class="taskbar">
+            <button class="start-button">
+                <img src="https://img.icons8.com/color/48/000000/windows-10.png" alt="Start">
+            </button>
+            <div class="taskbar-apps">
+                <div class="taskbar-icon">
+                    <img src="https://img.icons8.com/fluent/48/desktop" alt="This PC">
+                </div>
+                <div class="taskbar-icon">
+                    <img src="https://img.icons8.com/color/48/000000/folder-invoices.png" alt="File Explorer">
+                </div>
+            </div>
+            <div class="system-tray">
+                <span id="currentTime"></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
